@@ -290,7 +290,7 @@ export default function Dashboard() {
       </div>
       <div>
         <AssetStatusCard
-        title="Assets status"
+        title="Fleet Mileage"
         buttonText="Current status"
         onButtonClick={() => console.log("Button clicked")}
       >
@@ -299,7 +299,7 @@ export default function Dashboard() {
       </div>
       <div>
         <AssetStatusCard
-        title="Assets status"
+        title="Total Violations"
         buttonText="Current status"
         onButtonClick={() => console.log("Button clicked")}
       >
