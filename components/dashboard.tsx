@@ -5,10 +5,18 @@ import DonutChart from "./donut-chart";
 import AreaChart from "./area-chart";
 import DateRangePicker from "./DateRangePicker";
 import DatePicker from "./DatePicker";
-import { drivingData, fleetMilage, alerts } from "./notification-const";
+import {
+  violationData,
+  fleetMilage,
+  LicenseData,
+  alerts,
+  AssetData,
+  AssetSummaryData,
+} from "./notification-const";
 import TableData from "@/components/Table";
 import UnderlineInput from "./UnderlineInput";
 import { CarFront } from "lucide-react";
+import ServiceCombobox from "./ServiceCombobox";
 
 export default function Dashboard() {
   const handleSearch = () => {
@@ -39,7 +47,7 @@ export default function Dashboard() {
             buttonText="Current status"
             onButtonClick={() => console.log("Button clicked")}
           >
-            <DonutChart data={drivingData} />
+            <DonutChart data={AssetData} />
           </AssetStatusCard>
         </div>
         <div>
@@ -58,7 +66,7 @@ export default function Dashboard() {
             buttonText="Violations"
             onButtonClick={() => console.log("Button clicked")}
           >
-            <DonutChart data={drivingData} />
+            <DonutChart data={violationData} />
           </AssetStatusCard>
         </div>
       </div>
@@ -75,17 +83,13 @@ export default function Dashboard() {
         <div>
           <AssetStatusCard
             title="Licenses"
-            // buttonText="Current status"
-            // onButtonClick={() => console.log("Button clicked")}
           >
-            <DonutChart data={drivingData} />
+            <DonutChart data={LicenseData} />
           </AssetStatusCard>
         </div>
         <div>
           <AssetStatusCard
             title="Alerts summary"
-            // buttonText="Current status"
-            // onButtonClick={() => console.log("Button clicked")}
           >
             <DateRangePicker />
             <TableData alerts={alerts} />
@@ -94,10 +98,9 @@ export default function Dashboard() {
         <div>
           <AssetStatusCard
             title="Assets Service Summary"
-            // buttonText="Current status"
-            // onButtonClick={() => console.log("Button clicked")}
           >
-            <DonutChart data={drivingData} />
+            <ServiceCombobox />
+            <DonutChart data={AssetSummaryData} />
           </AssetStatusCard>
         </div>
       </div>
