@@ -25,7 +25,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen mb-4">
       <div className="">
         <h1 className="text-[#001e6c] text-xl font-bold my-4">
           Dashboard
@@ -51,6 +51,7 @@ export default function Dashboard() {
             title="Assets status"
             buttonText="Current status"
             onButtonClick={() => console.log("Button clicked")}
+            className="pb-8"
           >
             <DonutChart data={AssetData} />
           </AssetStatusCard>
@@ -71,6 +72,7 @@ export default function Dashboard() {
             title="Total Violations"
             buttonText="Violations"
             onButtonClick={() => console.log("Button clicked")}
+            className="pb-8"
           >
             <DonutChart data={violationData} />
           </AssetStatusCard>
@@ -89,6 +91,7 @@ export default function Dashboard() {
         <div>
           <AssetStatusCard
             title="Licenses"
+            className="pb-16"
           >
             <DonutChart data={LicenseData} />
           </AssetStatusCard>
@@ -104,6 +107,7 @@ export default function Dashboard() {
         <div>
           <AssetStatusCard
             title="Assets Service Summary"
+            className="pb-16"
           >
             <div className="items-end">
               <ServiceCombobox />
