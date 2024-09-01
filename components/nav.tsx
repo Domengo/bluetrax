@@ -1,47 +1,46 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { Check, ChevronsUpDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Check, ChevronsUpDown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import {
   Command,
   CommandEmpty,
   CommandGroup,
   CommandInput,
   CommandItem,
-} from "@/components/ui/command"
+} from "@/components/ui/command";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
-
+} from "@/components/ui/popover";
 
 interface NavLink {
-  href: string
-  label: string
+  href: string;
+  label: string;
 }
 
 interface TrackingOption {
-  value: string
-  label: string
+  value: string;
+  label: string;
 }
 
 interface NavbarProps {
-  links: NavLink[]
-  trackingOptions?: TrackingOption[]
+  links: NavLink[];
+  trackingOptions?: TrackingOption[];
 }
 
 export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
-  const [open, setOpen] = useState(false)
-  const [value, setValue] = useState("")
-  const pathname = usePathname()
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+  const pathname = usePathname();
 
-  const hasTrackingOptions = trackingOptions.length > 0
+  const hasTrackingOptions = trackingOptions.length > 0;
 
   return (
     <nav className="bg-nav p-4">
@@ -78,7 +77,7 @@ export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
           <span className="font-bold text-xl">BlueTrax</span>
         </Link>
         <div className="flex items-center space-x-4 ml-8">
-          {links.map((link) => (
+          {links.map((link) =>
             link.label.toLowerCase() === "tracking" && hasTrackingOptions ? (
               <Popover key={link.href} open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
@@ -86,10 +85,11 @@ export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
                     variant="ghost"
                     role="combobox"
                     aria-expanded={open}
-                    className="justify-between text-navForeground hover:bg-blue-700 hover:text-navForeground"
+                    className="justify-between text-navForeground hover:bg-nav-700 hover:text-navForeground"
                   >
                     {value
-                      ? trackingOptions.find((option) => option.value === value)?.label
+                      ? trackingOptions.find((option) => option.value === value)
+                          ?.label
                       : "Tracking"}
                     <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                   </Button>
@@ -103,14 +103,18 @@ export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
                         <CommandItem
                           key={option.value}
                           onSelect={(currentValue) => {
-                            setValue(currentValue === value ? "" : currentValue)
-                            setOpen(false)
+                            setValue(
+                              currentValue === value ? "" : currentValue
+                            );
+                            setOpen(false);
                           }}
                         >
                           <Check
                             className={cn(
                               "mr-2 h-4 w-4",
-                              value === option.value ? "opacity-100" : "opacity-0"
+                              value === option.value
+                                ? "opacity-100"
+                                : "opacity-0"
                             )}
                           />
                           {option.label}
@@ -126,15 +130,16 @@ export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
                 href={link.href}
                 className={cn(
                   "text-navForeground hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium",
-                  pathname === link.href && "border-b-2 border-navForeground pb-1"
+                  pathname === link.href &&
+                    "border-b-2 border-navForeground pb-1"
                 )}
               >
                 {link.label}
               </Link>
             )
-          ))}
+          )}
         </div>
       </div>
     </nav>
-  )
+  );
 }
