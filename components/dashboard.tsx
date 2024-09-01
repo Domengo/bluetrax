@@ -17,6 +17,7 @@ import TableData from "@/components/Table";
 import UnderlineInput from "./UnderlineInput";
 import { CarFront } from "lucide-react";
 import ServiceCombobox from "./ServiceCombobox";
+import { ArrowRight } from "lucide-react";
 
 export default function Dashboard() {
   const handleSearch = () => {
@@ -52,6 +53,7 @@ export default function Dashboard() {
             buttonText="Current status"
             onButtonClick={() => console.log("Button clicked")}
             className="pb-8"
+            icon={ArrowRight}
           >
             <DonutChart data={AssetData} />
           </AssetStatusCard>
@@ -62,6 +64,7 @@ export default function Dashboard() {
             title="Fleet Mileage"
             buttonText="Movement"
             onButtonClick={() => console.log("Button clicked")}
+            icon={ArrowRight}
           >
             <DateRangePicker className="" />
             <AreaChart data={fleetMilage} />
@@ -73,6 +76,7 @@ export default function Dashboard() {
             buttonText="Violations"
             onButtonClick={() => console.log("Button clicked")}
             className="pb-8"
+            icon={ArrowRight}
           >
             <DonutChart data={violationData} />
           </AssetStatusCard>
