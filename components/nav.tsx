@@ -4,8 +4,8 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Check, ChevronsUpDown } from "lucide-react"
-
 import { cn } from "@/lib/utils"
+
 import { Button } from "@/components/ui/button"
 import {
   Command,
@@ -20,30 +20,33 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-const trackingOptions = [
-  { value: "shipments", label: "Shipments" },
-  { value: "inventory", label: "Inventory" },
-  { value: "assets", label: "Assets" },
-]
 
 interface NavLink {
   href: string
   label: string
 }
 
-interface NavbarProps {
-  links: NavLink[]
+interface TrackingOption {
+  value: string
+  label: string
 }
 
-export default function Navbar({ links }: NavbarProps) {
+interface NavbarProps {
+  links: NavLink[]
+  trackingOptions?: TrackingOption[]
+}
+
+export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
   const pathname = usePathname()
 
+  const hasTrackingOptions = trackingOptions.length > 0
+
   return (
-    <nav className="bg-blue-600 p-4">
+    <nav className="bg-nav p-4">
       <div className="container mx-auto flex items-center">
-        <Link href="/" className="flex items-center text-white">
+        <Link href="/" className="flex items-center text-navForeground">
           <svg
             className="h-8 w-8 mr-2"
             viewBox="0 0 24 24"
@@ -72,18 +75,18 @@ export default function Navbar({ links }: NavbarProps) {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="font-bold text-xl">BlueTrack</span>
+          <span className="font-bold text-xl">BlueTrax</span>
         </Link>
         <div className="flex items-center space-x-4 ml-8">
           {links.map((link) => (
-            link.label.toLowerCase() === "tracking" ? (
+            link.label.toLowerCase() === "tracking" && hasTrackingOptions ? (
               <Popover key={link.href} open={open} onOpenChange={setOpen}>
                 <PopoverTrigger asChild>
                   <Button
                     variant="ghost"
                     role="combobox"
                     aria-expanded={open}
-                    className="justify-between text-white hover:bg-blue-700 hover:text-white"
+                    className="justify-between text-navForeground hover:bg-blue-700 hover:text-navForeground"
                   >
                     {value
                       ? trackingOptions.find((option) => option.value === value)?.label
@@ -122,8 +125,8 @@ export default function Navbar({ links }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium",
-                  pathname === link.href && "border-b-2 border-white pb-1"
+                  "text-navForeground hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium",
+                  pathname === link.href && "border-b-2 border-navForeground pb-1"
                 )}
               >
                 {link.label}

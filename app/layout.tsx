@@ -11,10 +11,16 @@ export const metadata: Metadata = {
 };
 
 const links = [
-  { href: '/dashboard', label: 'Dashboard' },
+  { href: '/', label: 'Dashboard' },
   { href: '/tracking', label: 'Tracking' },
   { href: '/analytics', label: 'Analytics' },
 ]
+
+const trackingOptions = [
+  { value: "shipments", label: "Shipments" },
+  { value: "inventory", label: "Inventory" },
+  { value: "assets", label: "Assets" },
+];
 
 export default function RootLayout({
   children,
@@ -24,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar links={links} />
+        <Navbar links={links} trackingOptions={trackingOptions}/>
         {children}
         </body>
     </html>
