@@ -273,12 +273,19 @@
 import AssetStatusCard from "@/components/asset-status-card";
 import DonutChart from "./donut-chart";
 import AreaChart from "./area-chart";
-
+import DateRangePicker from "./DateRangePicker";
+import { DatePicker } from "./DatePicker";
 import { drivingData, fleetMilage } from "./notification-const";
 
 export default function Dashboard() {
   return (
     <div className="flex flex-col">
+      <div className="mt-4">
+        <div></div>
+        <div className="ml-auto">
+          <DatePicker />
+        </div>
+      </div>
       <div className="grid grid-cols-3 gap-4 mt-4">
         <div>
           <AssetStatusCard
@@ -295,6 +302,7 @@ export default function Dashboard() {
             buttonText="Movement"
             onButtonClick={() => console.log("Button clicked")}
           >
+            <DateRangePicker className="" />
             <AreaChart data={fleetMilage} />
           </AssetStatusCard>
         </div>
@@ -308,9 +316,16 @@ export default function Dashboard() {
           </AssetStatusCard>
         </div>
       </div>
-      <h1>fleet</h1>
+      <div className="grid grid-cols-2">
+        <div>
+          <h1>fleet</h1>
+        </div>
+        <div className="ml-auto">
+          <DatePicker />
+        </div>
+      </div>
+
       <div className="grid grid-cols-3 gap-4 mt-4">
-        
         <div>
           <AssetStatusCard
             title="Licenses"

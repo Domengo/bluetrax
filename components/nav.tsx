@@ -274,7 +274,7 @@ export default function Navbar({ links, trackingOptions = [] }: NavbarProps) {
                 key={link.href}
                 href={link.href}
                 className={cn(
-                  "text-white hover:bg-blue-700 px-3 py-2 rounded-md text-sm font-medium relative",
+                  "text-white hover:bg-blue-900 px-3 py-2 rounded-md text-sm font-medium relative",
                   pathname === link.href &&
                     "after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-white"
                 )}
