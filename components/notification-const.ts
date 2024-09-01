@@ -50,3 +50,19 @@ export const notifications = [
     tooltipContent: 'Weekly mileage report is now available'
   }
 ]
+
+export const drivingData = [
+  { name: 'Harsh Acceleration', value: 615, color: 'hsl(358, 94%, 76%)' },
+  { name: 'Harsh Braking', value: 610, color: 'hsl(174, 72%, 56%)' },
+  { name: 'Speeding', value: 45, color: 'hsl(174, 72%, 46%)' },
+  { name: 'Night Drive', value: 50, color: 'hsl(0, 0%, 80%)' },
+]
+
+export const fleetMilage = [
+  { day: 1, kilometers: 10 },
+  { day: 2, kilometers: 15 },
+  { day: 3, kilometers: 20 },
+  { day: 4, kilometers: 50 },
+  { day: 5, kilometers: 50 },
+  { day: 6, kilometers: 80 }
+];
