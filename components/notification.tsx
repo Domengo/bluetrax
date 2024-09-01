@@ -5,7 +5,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import React from "react";
-import { Bell, Info } from "lucide-react";
+import { Info } from "lucide-react";
+
 // Notification component
 const Notification = ({ logo, title, datetime, content, tooltipContent }) => (
   <div className="flex items-center justify-between p-2 hover:bg-gray-100 rounded-lg">
