@@ -1,5 +1,5 @@
 import React from 'react'
-import { LucideIcon, Info } from 'lucide-react'
+import { Info } from 'lucide-react'
 import {
   Tooltip,
   TooltipContent,
@@ -14,7 +14,7 @@ const Notification: React.FC<NotificationProps> = ({ logo, title, datetime, cont
   return (
     <div className="flex items-center justify-between p-2 hover:bg-gray-100 rounded-lg">
       <div className="flex items-center space-x-3">
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-white ${logo.bgColor}`}>
+        <div className={`w-8 h-8 rounded flex items-center justify-center text-white ${logo.bgColor}`}>
           {IconComponent && <IconComponent className="w-4 h-4" />}
         </div>
         <div>

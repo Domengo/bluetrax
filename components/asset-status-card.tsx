@@ -22,7 +22,7 @@ export default function AssetStatusCard({ title, children, buttonText, onButtonC
       <CardFooter>
         <Button 
           onClick={onButtonClick} 
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+          className="w-full bg-[#001e6c] hover:bg-blue-800 text-white"
         >
           {buttonText}
         </Button>

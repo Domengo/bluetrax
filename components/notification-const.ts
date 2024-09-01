@@ -54,8 +54,8 @@ export const notifications = [
 export const drivingData = [
   { name: 'Harsh Acceleration', value: 615, color: 'hsl(358, 94%, 76%)' },
   { name: 'Harsh Braking', value: 610, color: 'hsl(174, 72%, 56%)' },
-  { name: 'Speeding', value: 45, color: 'hsl(174, 72%, 46%)' },
-  { name: 'Night Drive', value: 50, color: 'hsl(0, 0%, 80%)' },
+  { name: 'Speeding', value: 450, color: 'hsl(174, 72%, 46%)' },
+  { name: 'Night Drive', value: 350, color: 'hsl(0, 0%, 80%)' },
 ]
 
 export const fleetMilage = [

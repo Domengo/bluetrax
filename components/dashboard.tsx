@@ -278,33 +278,66 @@ import { drivingData, fleetMilage } from "./notification-const";
 
 export default function Dashboard() {
   return (
-    <div className="grid grid-cols-3 gap-4 mt-4">
-      <div>
-        <AssetStatusCard
-        title="Assets status"
-        buttonText="Current status"
-        onButtonClick={() => console.log("Button clicked")}
-      >
-        <DonutChart data={drivingData} />
-      </AssetStatusCard>
+    <div className="flex flex-col">
+      <div className="grid grid-cols-3 gap-4 mt-4">
+        <div>
+          <AssetStatusCard
+            title="Assets status"
+            buttonText="Current status"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <DonutChart data={drivingData} />
+          </AssetStatusCard>
+        </div>
+        <div>
+          <AssetStatusCard
+            title="Fleet Mileage"
+            buttonText="Movement"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <AreaChart data={fleetMilage} />
+          </AssetStatusCard>
+        </div>
+        <div>
+          <AssetStatusCard
+            title="Total Violations"
+            buttonText="Violations"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <DonutChart data={drivingData} />
+          </AssetStatusCard>
+        </div>
       </div>
-      <div>
-        <AssetStatusCard
-        title="Fleet Mileage"
-        buttonText="Current status"
-        onButtonClick={() => console.log("Button clicked")}
-      >
-        <AreaChart data={fleetMilage} />
-      </AssetStatusCard>
-      </div>
-      <div>
-        <AssetStatusCard
-        title="Total Violations"
-        buttonText="Current status"
-        onButtonClick={() => console.log("Button clicked")}
-      >
-        <DonutChart data={drivingData} />
-      </AssetStatusCard>
+      <h1>fleet</h1>
+      <div className="grid grid-cols-3 gap-4 mt-4">
+        
+        <div>
+          <AssetStatusCard
+            title="Licenses"
+            buttonText="Current status"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <DonutChart data={drivingData} />
+          </AssetStatusCard>
+        </div>
+        <div>
+          <AssetStatusCard
+            title="Alerts summary"
+            buttonText="Current status"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <AreaChart data={fleetMilage} />
+          </AssetStatusCard>
+        </div>
+        <div>
+          <AssetStatusCard
+            title="Assets Service Summary"
+            buttonText="Current status"
+            onButtonClick={() => console.log("Button clicked")}
+          >
+            <DonutChart data={drivingData} />
+          </AssetStatusCard>
+        </div>
       </div>
     </div>
   );

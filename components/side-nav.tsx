@@ -12,7 +12,7 @@ const SideNav: React.FC<SideNavProps> = ({ username, notifications }) => {
     <div className=" bg-white shadow-lg p-4">
       <div className="flex flex-col items-center mb-8">
         <div className="rounded-full bg-destructive">
-          <PersonIcon className="w-16 h-16 text-white" />
+          <PersonIcon className="w-16 h-16 text-black" />
         </div>
         <div>
           <p className="text-sm font-medium">Hi {username}, welcome.</p>
