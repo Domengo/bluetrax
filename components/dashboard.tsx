@@ -274,8 +274,9 @@ import AssetStatusCard from "@/components/asset-status-card";
 import DonutChart from "./donut-chart";
 import AreaChart from "./area-chart";
 import DateRangePicker from "./DateRangePicker";
-import { DatePicker } from "./DatePicker";
-import { drivingData, fleetMilage } from "./notification-const";
+import DatePicker from "./DatePicker";
+import { drivingData, fleetMilage, alerts } from "./notification-const";
+import TableData  from "@/components/Table";
 
 export default function Dashboard() {
   return (
@@ -341,7 +342,7 @@ export default function Dashboard() {
             buttonText="Current status"
             onButtonClick={() => console.log("Button clicked")}
           >
-            <AreaChart data={fleetMilage} />
+            <TableData alerts={alerts}/>
           </AssetStatusCard>
         </div>
         <div>

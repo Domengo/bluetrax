@@ -12,11 +12,11 @@ interface AssetStatusCardProps {
 
 export default function AssetStatusCard({ title, children, buttonText, onButtonClick }: AssetStatusCardProps) {
   return (
-    <Card className="">
+    <Card className=" flex flex-col">
       <CardHeader>
         <CardTitle className="text-lg font-semibold">{title}</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="flex-grow-0">
         {children}
       </CardContent>
       <CardFooter>

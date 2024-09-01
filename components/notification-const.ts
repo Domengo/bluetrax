@@ -66,3 +66,30 @@ export const fleetMilage = [
   { day: 5, kilometers: 50 },
   { day: 6, kilometers: 80 }
 ];
+
+export type VehicleAlert = {
+  Alert: string;
+  Count: number;
+};
+
+export type DrivingData = {
+  name: string;
+  value: number;
+  color: string;
+};
+
+export type FleetMileage = {
+  day: number;
+  kilometers: number;
+};
+
+export interface Alert {
+  type: string;
+  count: number;
+}
+
+export const alerts: Alert[] = [
+  { type: "Power Cuts", count: 15 },
+  { type: "Antenna Faults", count: 4 },
+  { type: "Panic", count: 0 },
+]
