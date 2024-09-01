@@ -288,7 +288,7 @@ export default function Dashboard() {
           </div>
         </div>
       </main>
-      <aside className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-6">
+      {/* <aside className="fixed top-0 right-0 w-64 h-full bg-white shadow-lg p-6">
         <h2 className="text-xl font-semibold mb-4">Hi David, welcome.</h2>
         <h3 className="text-lg font-medium mb-2">RECENT NOTIFICATIONS</h3>
         <ul>
@@ -305,7 +305,7 @@ export default function Dashboard() {
             </li>
           ))}
         </ul>
-      </aside>
+      </aside> */}
     </div>
   );
 }
