@@ -123,23 +123,6 @@ export default function AreaChart({ data }: { data: DataPoint[] }) {
       .ease(d3.easeQuadOut)
       .attr("opacity", 1);
 
-    // Add data points with transition
-    svg
-      .selectAll(".data-point")
-      .data(data)
-      .enter()
-      .append("circle")
-      .attr("class", "data-point")
-      .attr("cx", (d) => x(d.day))
-      .attr("cy", (d) => y(d.kilometers))
-      .attr("r", 4)
-      .attr("fill", "rgb(102, 98, 136)")
-      .attr("opacity", 0)
-      .transition()
-      .duration(1000)
-      .ease(d3.easeQuadOut)
-      .attr("opacity", 1);
-
     // X Axis
     svg
       .append("g")
@@ -189,15 +172,6 @@ export default function AreaChart({ data }: { data: DataPoint[] }) {
       .style("stroke-width", "1px")
       .style("opacity", 0);
 
-    const hoverCircle = svg
-      .append("circle")
-      .attr("class", "hover-circle")
-      .attr("r", 6)
-      .style("fill", "rgb(102, 98, 136)")
-      .style("stroke", "#fff")
-      .style("stroke-width", "2px")
-      .style("opacity", 0);
-
     svg
       .append("rect")
       .attr("width", width)
@@ -206,12 +180,10 @@ export default function AreaChart({ data }: { data: DataPoint[] }) {
       .style("pointer-events", "all")
       .on("mouseover", () => {
         hoverLine.style("opacity", 1);
-        hoverCircle.style("opacity", 1);
         tooltip.style("opacity", 1);
       })
       .on("mouseout", () => {
         hoverLine.style("opacity", 0);
-        hoverCircle.style("opacity", 0);
         tooltip.style("opacity", 0);
       })
       .on("mousemove", (event) => {
@@ -222,7 +194,6 @@ export default function AreaChart({ data }: { data: DataPoint[] }) {
         const d = data[index];
 
         hoverLine.attr("x1", x(d.day)).attr("x2", x(d.day));
-        hoverCircle.attr("cx", x(d.day)).attr("cy", y(d.kilometers));
 
         const tooltipX = x(d.day) + margin.left;
         const tooltipY = y(d.kilometers) + margin.top;

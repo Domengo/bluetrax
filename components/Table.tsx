@@ -7,9 +7,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-// import { Alerts } from "./notification-const";
+import { Alert } from "./notification-const";
 
-export default function AlertSummary({ alerts }) {
+export default function AlertSummary({ alerts }: { alerts: Alert[] }) {
   const totalAlerts = alerts.reduce((sum, alert) => sum + alert.count, 0);
 
   return (

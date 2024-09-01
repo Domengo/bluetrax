@@ -30,7 +30,7 @@ const services = [
   },
 ]
 
-export default function ComboboxDemo() {
+export default function Combo() {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -41,7 +41,7 @@ export default function ComboboxDemo() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-1/2 justify-end"
+          className="w-1/2 justify-between"
         >
           {value
             ? services.find((service) => service.value === value)?.label
@@ -49,7 +49,7 @@ export default function ComboboxDemo() {
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-1/2 p-0 bg-slate-400">
+      <PopoverContent className="w-1/2 p-0 bg-gray-300 text-black">
         <Command>
           <CommandInput placeholder="Search service..." className="h-9" />
           <CommandList>

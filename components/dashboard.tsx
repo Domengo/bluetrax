@@ -26,6 +26,11 @@ export default function Dashboard() {
 
   return (
     <div className="flex flex-col">
+      <div className="">
+        <h1 className="text-[#001e6c] text-xl font-bold my-4">
+          Dashboard
+        </h1>
+      </div>
       <div className="grid grid-cols-2 mt-4">
         <div>
           <UnderlineInput
@@ -40,8 +45,8 @@ export default function Dashboard() {
           <DatePicker />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4 mt-4">
-        <div>
+      <div className="grid grid-cols-3 gap-4 mt-4 ">
+        <div className="">
           <AssetStatusCard
             title="Assets status"
             buttonText="Current status"
@@ -49,8 +54,9 @@ export default function Dashboard() {
           >
             <DonutChart data={AssetData} />
           </AssetStatusCard>
+          <div className="mt-8"></div>
         </div>
-        <div>
+        <div className="">
           <AssetStatusCard
             title="Fleet Mileage"
             buttonText="Movement"
@@ -60,7 +66,7 @@ export default function Dashboard() {
             <AreaChart data={fleetMilage} />
           </AssetStatusCard>
         </div>
-        <div>
+        <div className="">
           <AssetStatusCard
             title="Total Violations"
             buttonText="Violations"
@@ -99,7 +105,11 @@ export default function Dashboard() {
           <AssetStatusCard
             title="Assets Service Summary"
           >
-            <ServiceCombobox />
+            <div className="items-end">
+              <ServiceCombobox />
+            </div>
+            
+
             <DonutChart data={AssetSummaryData} />
           </AssetStatusCard>
         </div>
