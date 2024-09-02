@@ -1,5 +1,3 @@
-"use server"
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -33,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar links={links} trackingOptions={trackingOptions} sideNavContent={NotificationWrapper}/>
+        <Navbar links={links} trackingOptions={trackingOptions} sideNavContent={<NotificationWrapper />}/>
         {children}
         </body>
     </html>

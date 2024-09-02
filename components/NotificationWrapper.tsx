@@ -1,5 +1,3 @@
-'use server'
-
 import React from 'react'
 import Notification from './Notification'
 import {notifications } from './notification-const'
