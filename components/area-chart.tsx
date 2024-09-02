@@ -206,7 +206,7 @@ export default function AreaChart({ data }: { data: DataPoint[] }) {
   }, [data, dimensions]);
 
   return (
-    <div ref={containerRef} className="w-full h-full relative">
+    <div ref={containerRef} className="w-full relative">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   );
