@@ -41,7 +41,7 @@ export default function Combo() {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-1/2 justify-between"
+          className="w-1/2 items-end"
         >
           {value
             ? services.find((service) => service.value === value)?.label

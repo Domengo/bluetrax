@@ -173,7 +173,7 @@ export default function Dashboard() {
           <DatePicker />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         <AssetStatusCard
           title="Assets status"
           buttonText="Current status"
@@ -206,7 +206,7 @@ export default function Dashboard() {
         <h1 className="text-[#001e6c] font-bold text-xl">Fleet</h1>
         <DatePicker />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         <AssetStatusCard
           title="Licenses"
           className="pb-16"
