@@ -26,7 +26,7 @@ export const iconMap: { [key: string]: LucideIcon } = {
   BarChart,
 };
 
-export const notifications = [
+export const notifications: NotificationProps[] = [
   {
     logo: { icon: "AlertTriangle", bgColor: "bg-[#c40000]" },
     title: "KBL 175G",

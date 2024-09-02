@@ -1,7 +1,10 @@
+"use server"
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav";
+import NotificationWrapper from "@/components/notification";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar links={links} trackingOptions={trackingOptions}/>
+        <Navbar links={links} trackingOptions={trackingOptions} sideNavContent={NotificationWrapper}/>
         {children}
         </body>
     </html>
