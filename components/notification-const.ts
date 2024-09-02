@@ -9,8 +9,8 @@ import {
 export const username = "David";
 
 export interface NotificationProps {
-  logo: {
-    icon: string;
+  logo?: {
+    icon: keyof typeof iconMap;
     bgColor: string;
   };
   title: string;
