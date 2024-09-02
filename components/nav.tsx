@@ -176,7 +176,7 @@ import {
 } from "@/components/ui/sheet"
 import Notification from './notification'
 import { notifications } from './notification-const';
-
+import UserProfile from "./User"
 
 interface NavLink {
   href: string
@@ -335,6 +335,7 @@ export default function Navbar({ links, trackingOptions = []}: NavbarProps) {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden mt-4">
+          <UserProfile username="David" className="text-white"/>
           {links.map((link) =>
             link.label.toLowerCase() === "tracking" && hasTrackingOptions ? (
               <Popover key={link.href} open={open} onOpenChange={setOpen}>

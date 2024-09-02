@@ -244,7 +244,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ data }) => {
   }, [data, dimensions, total])
 
   return (
-    <div ref={containerRef} className="w-full h-full relative">
+    <div ref={containerRef} className="w-full relative">
       <svg ref={svgRef}></svg>
       {hoveredSegment !== null && (
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-white p-2 rounded-md shadow-md border border-gray-200 text-xs" style={{ width: '120px' }}>
