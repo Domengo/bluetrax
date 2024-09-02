@@ -174,6 +174,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import Notification from './notification'
+import { notifications } from './notification-const';
+
 
 interface NavLink {
   href: string
@@ -188,10 +191,9 @@ interface TrackingOption {
 interface NavbarProps {
   links: NavLink[]
   trackingOptions?: TrackingOption[]
-  sideNavContent?: React.ReactNode
 }
 
-export default function Navbar({ links, trackingOptions = [], sideNavContent }: NavbarProps) {
+export default function Navbar({ links, trackingOptions = []}: NavbarProps) {
   const [open, setOpen] = useState(false)
   const [value, setValue] = useState("")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -307,7 +309,9 @@ export default function Navbar({ links, trackingOptions = [], sideNavContent }: 
               <SheetHeader>
                 <SheetTitle>Notifications</SheetTitle>
                 <SheetDescription>
-                  {sideNavContent}
+                {notifications.map((notification, index) => (
+            <Notification key={index} {...notification} />
+          ))}
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>

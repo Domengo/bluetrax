@@ -1,23 +1,15 @@
 import { NotificationProps } from "./notification-const";
-import Notification from "./notification";
-import { User } from 'lucide-react';
+import Notification from "@/components/notification";
+import UserProfile from "@/components/User";
 
 interface SideNavProps {
-  username: string;
   notifications: NotificationProps[];
 }
 
-const SideNav: React.FC<SideNavProps> = ({ username, notifications }) => {
+const SideNav: React.FC<SideNavProps> = ({notifications }) => {
   return (
     <div className=" bg-white shadow-lg p-4">
-      <div className="flex flex-col items-center mb-8">
-        <div className="rounded-full bg-destructive">
-          <User size={96} fill="gray" color=""/>
-        </div>
-        <div>
-          <p className="text-xl font-bold text-[#001e6c]">Hi {username}, welcome.</p>
-        </div>
-      </div>
+      <UserProfile username="David" />
       <hr />
       <div>
         <h2 className="text-xs font-semibold text-gray-500 mb-2 mt-4">RECENT NOTIFICATIONS</h2>

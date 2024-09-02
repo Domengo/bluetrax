@@ -116,6 +116,7 @@
 //             <div className="items-end">
 //               <ServiceCombobox />
 //             </div>
+            
 
 //             <DonutChart data={AssetSummaryData} />
 //           </AssetStatusCard>
@@ -152,12 +153,14 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex flex-col mb-4 px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col min-h-screen mb-4 px-4 sm:px-6 lg:px-8">
       <div className="my-4">
-        <h1 className="text-[#001e6c] text-xl font-bold">Dashboard</h1>
+        <h1 className="text-[#001e6c] text-xl font-bold">
+          Dashboard
+        </h1>
       </div>
-      <div className="flex flex-row items-center mt-4 ">
-        <div className="w-full ">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-4 space-y-4 sm:space-y-0">
+        <div className="w-full sm:w-auto">
           <UnderlineInput
             icon={<CarFront className="text-[#001e6c]" />}
             placeholder="Search by Reg No."
@@ -166,7 +169,7 @@ export default function Dashboard() {
             buttonText="Go To Track"
           />
         </div>
-        <div className="w-full ">
+        <div className="w-full sm:w-auto">
           <DatePicker />
         </div>
       </div>
@@ -204,14 +207,22 @@ export default function Dashboard() {
         <DatePicker />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-        <AssetStatusCard title="Licenses" className="pb-16">
+        <AssetStatusCard
+          title="Licenses"
+          className="pb-16"
+        >
           <DonutChart data={LicenseData} />
         </AssetStatusCard>
-        <AssetStatusCard title="Alerts summary">
+        <AssetStatusCard
+          title="Alerts summary"
+        >
           <DateRangePicker />
           <TableData alerts={alerts} />
         </AssetStatusCard>
-        <AssetStatusCard title="Assets Service Summary" className="pb-16">
+        <AssetStatusCard
+          title="Assets Service Summary"
+          className="pb-16"
+        >
           <div className="items-end">
             <ServiceCombobox />
           </div>
