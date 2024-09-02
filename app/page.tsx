@@ -1,6 +1,6 @@
 import Dashboard from "@/components/dashboard";
 import SideNav from "@/components/side-nav";
-import { notifications, username } from "@/components/notification-const";
+import { notifications } from "@/components/notification-const";
 
 export default function Page() {
   return (
@@ -10,7 +10,7 @@ export default function Page() {
       </div>
       <div className="col-span-2 relative hidden md:block">
         <div className="sticky top-4">
-          <SideNav username={username} notifications={notifications} />
+          <SideNav notifications={notifications} />
         </div>
       </div>
     </div>

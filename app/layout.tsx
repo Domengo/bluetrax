@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Analytics/>
         <Navbar links={links} trackingOptions={trackingOptions}/>
-        <Analytics/>
         {children}
         </body>
     </html>
