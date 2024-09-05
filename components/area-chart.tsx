@@ -3,9 +3,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 
-export interface DataPoint {
-  day: number;
-  kilometers: number;
+interface DataPoint {
+  name: string
+  value: number
 }
 
 export default function AreaChart({ data }: { data: DataPoint[] }) {
